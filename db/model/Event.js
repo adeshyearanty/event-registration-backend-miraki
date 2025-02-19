@@ -9,15 +9,18 @@ const EventSchema = mongoose.Schema(
         },
         email: {
             type: mongoose.SchemaTypes.Email,
-            required: true
+            required: true,
+            unique: true
         },
         rollNo: {
             type: Number,
-            required: true
+            required: true,
+            unique: true
         },
         mobile: {
             type: Number,
-            required: true
+            required: true,
+            unique: true
         },
         event: {
             type: String,
@@ -38,6 +41,6 @@ const EventSchema = mongoose.Schema(
     }
 )
 
-const Event = mongoose.model("EventRegistrations", EventSchema)
+const Event = mongoose.model("eventregistration", EventSchema)
 
 export default Event

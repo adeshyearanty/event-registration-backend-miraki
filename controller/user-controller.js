@@ -34,7 +34,4 @@ async function handleUserRetreival(req, res) {
   }
 }
 
-export {
-  handleUserRegistration,
-  handleUserRetreival,
-};
+export { handleUserRegistration, handleUserRetreival };
