@@ -10,7 +10,7 @@ import {
 } from "../middleware/validation-middleware.js";
 
 userRouter
-  .post("/register",validateUserInput, handleValidationErrors, handleUserRegistration)
+  .post("/register", validateUserInput, handleValidationErrors, handleUserRegistration)
   .get("/users", handleUserRetreival);
 
 export default userRouter;

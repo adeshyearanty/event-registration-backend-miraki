@@ -13,5 +13,4 @@ async function startServer(){
     await createDbConn();
     app.listen(PORT, ()=>console.log(`Server is running on PORT : ${PORT}`))
 }
-
 startServer();
