@@ -1,8 +1,9 @@
-import Event from "../db/model/Event.js";
+import StudentsModel from "../db/model/StudentsModel.js";
+import EventsModel from "../db/model/EventsModel.js";
 
 async function handleUserRegistration(req, res) {
   try {
-    await Event.create(req.body);
+    await StudentsModel.create(req.body);
     // console.log(req.body);
     res.status(201).json({
       message: "User Successfully Registered..!!",
@@ -24,7 +25,7 @@ async function handleUserRegistration(req, res) {
 }
 async function handleUserRetreival(req, res) {
   try {
-    const users = await Event.find({});
+    const users = await StudentsModel.find({});
     res.status(200).json(users);
   } catch (error) {
     console.error(`Error in /users ${error}`);
@@ -34,4 +35,16 @@ async function handleUserRetreival(req, res) {
   }
 }
 
-export { handleUserRegistration, handleUserRetreival };
+async function handleEventRetreival(req, res) {
+  try {
+    const events = await EventsModel.find({});
+    res.status(200).json(events);
+  } catch (error) {
+    console.error(`Error in /events ${error}`);
+    res.status(500).json({
+      message: "Internal Server Error",
+    });
+  }
+}
+
+export { handleUserRegistration, handleUserRetreival, handleEventRetreival };

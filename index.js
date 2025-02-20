@@ -8,6 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use(userRouter);
+app.use('/Static', express.static('Static'));
 
 async function startServer(){
     await createDbConn();

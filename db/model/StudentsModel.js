@@ -41,6 +41,6 @@ const EventSchema = mongoose.Schema(
     }
 )
 
-const Event = mongoose.model("eventregistration", EventSchema)
+const StudentsModel = mongoose.model("eventregistration", EventSchema)
 
-export default Event
+export default StudentsModel

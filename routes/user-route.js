@@ -3,6 +3,7 @@ const userRouter = Router();
 import {
   handleUserRegistration,
   handleUserRetreival,
+  handleEventRetreival,
 } from "../controller/user-controller.js";
 import {
   validateUserInput,
@@ -11,6 +12,7 @@ import {
 
 userRouter
   .post("/register", validateUserInput, handleValidationErrors, handleUserRegistration)
-  .get("/users", handleUserRetreival);
+  .get("/users", handleUserRetreival)
+  .get("/events", handleEventRetreival);
 
 export default userRouter;
